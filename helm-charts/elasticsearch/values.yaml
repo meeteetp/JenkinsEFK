@@ -1,0 +1,15 @@
+
+
+replicaCount: 2
+
+resources:
+  limits:
+    cpu: 1000m
+  requests:
+    cpu: 100m
+
+#####ES
+esImage: "k8s.gcr.io/elasticsearch"
+esImageVersion: "v6.2.5"
+esPort: 9200
+esExternalPort: 9300

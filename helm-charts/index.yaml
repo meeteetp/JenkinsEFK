@@ -1,0 +1,23 @@
+apiVersion: v1
+entries:
+  elasticsearch:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-21T14:15:58.4008195-06:00
+    description: A Helm chart for Kubernetes
+    digest: 318142532b817e590bd5732ccb813bde4f4d4b316fff405fdb1ba64a9e14f717
+    name: elasticsearch
+    urls:
+    - elasticsearch-0.1.0.tgz
+    version: 0.1.0
+  kibana:
+  - apiVersion: v1
+    appVersion: "1.0"
+    created: 2018-09-21T14:15:58.4038215-06:00
+    description: A Helm chart for Kubernetes
+    digest: e0bdfda282ffab7777486e340f4d7bda2898fd0e924466f7f27faa65ee2c8a83
+    name: kibana
+    urls:
+    - kibana-0.1.0.tgz
+    version: 0.1.0
+generated: 2018-09-21T14:15:58.3967708-06:00

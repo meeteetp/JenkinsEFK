@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kibana-logging
+  namespace: kube-system
+  labels:
+    k8s-app: kibana-logging
+    kubernetes.io/cluster-service: "true"
+    addonmanager.kubernetes.io/mode: Reconcile
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      k8s-app: kibana-logging
+  template:
+    metadata:
+      labels:
+        k8s-app: kibana-logging
+      annotations:
+        seccomp.security.alpha.kubernetes.io/pod: 'docker/default'
+    spec:
+      containers:
+      - name: kibana-logging
+        image: {{ .Values.kibanaImage }}:{{ .Values.kibanaImageVersion }}
+        resources:
+{{ toYaml .Values.resources | indent 10 }}
+        env:
+          - name: ELASTICSEARCH_URL
+            value: {{ .Values.esURL }}
+        ports:
+        - containerPort: {{ .Values.kibanaUIPort }}
+          name: ui
+          protocol: TCP

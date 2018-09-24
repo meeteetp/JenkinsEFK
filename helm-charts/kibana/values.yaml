@@ -1,0 +1,15 @@
+
+resources:
+  limits:
+   cpu: 1000m
+   #memory: 128Mi
+  requests:
+   cpu: 100m
+   #memory: 128Mi
+
+#####Kibana
+kibanaImage: "docker.elastic.co/kibana/kibana-oss"
+kibanaImageVersion: "6.2.4"
+kibanaUIPort: 5601
+esURL: "http://elasticsearch-logging:9200"
+
